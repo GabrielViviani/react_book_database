@@ -1,24 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Post from "./pages/Post/post";
+import Edit from "./pages/Edit/edit";
+import LerMais from "./pages/LerMais/lermais";
+import Feed from "./pages/Feed/feed";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Routes>
+        <Route exact path="/" element={<Feed />} />
+        <Route path="/post" element={<Post />} />
+        <Route path="/edit/:id" element={<Edit />} />
+        <Route path="/lermais" element={<LerMais />} />
+      </Routes>
+    </Router>
   );
 }
 
