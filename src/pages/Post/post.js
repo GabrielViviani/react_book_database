@@ -29,7 +29,7 @@ function Post() {
 
   const addBook = (data) =>
     axios
-      .post("http://localhost:8080/books", data)
+      .post("http://localhost:8080/CreateBooks/", data)
       .then(() => {
         console.log("Livro adicionado com sucesso");
         Navigate("/");

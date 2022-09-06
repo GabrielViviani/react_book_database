@@ -28,7 +28,7 @@ function Edit() {
 
   const addBook = (data) =>
     axios
-      .patch(`http://localhost:8080/books/${id}`, data)
+      .patch(`http://localhost:8080/UpdateBooks/${id}`, data)
       .then(() => {
         console.log("Livro adicionado com sucesso");
         Navigate("/");
@@ -45,7 +45,7 @@ function Edit() {
   } = useForm({ resolver: yupResolver(validationPost) });
 
   useEffect(() => {
-    axios.get(`http://localhost:8080/books/${id}`).then((response) => {
+    axios.patch(`http://localhost:8080/UpdateBooks/${id}`).then((response) => {
       reset(response.data);
     });
   }, []);

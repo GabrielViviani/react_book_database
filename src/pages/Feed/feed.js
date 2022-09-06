@@ -12,7 +12,7 @@ function Feed() {
 
   function listBooks() {
     axios
-      .get("http://localhost:8080/books")
+      .get("http://localhost:8080/ListBooks")
       .then((response) => {
         setPosts(response.data);
       })
@@ -48,8 +48,8 @@ function Feed() {
               <div className="card" key={key}>
                 <h1>Informações do Livro</h1>
                 <div className="line-post"></div>
-                <p>Título : {post.title}</p>
-                <p>Autor: {post.author}</p>
+                <p>Autor : {post.author}</p>
+                <p>Título: {post.title}</p>
                 <div className="btns">
                   <div className="btn-edit">
                     <Link to={{ pathname: `/edit/${post.id}` }}>
