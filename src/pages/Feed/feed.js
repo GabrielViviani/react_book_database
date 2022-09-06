@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import More from "../../images/more.svg";
 import "./feed.css";
 import axios from "axios";
 import { Link } from "react-router-dom";
