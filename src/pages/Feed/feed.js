@@ -45,10 +45,9 @@ function Feed() {
           {posts.map((post, key) => {
             return (
               <div className="card" key={key}>
-                <h1>Informações do Livro</h1>
+                <h1>Título: {post.title}</h1>
                 <div className="line-post"></div>
                 <p>Autor : {post.author}</p>
-                <p>Título: {post.title}</p>
                 <div className="btns">
                   <div className="btn-edit">
                     <Link to={{ pathname: `/edit/${post.id}` }}>
