@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./feed.css";
 import axios from "axios";
 import { Link } from "react-router-dom";
-
+import SearchBar from "../../components/Search/searchbar";
 import HeaderMain from "../../components/HeaderMain/HeaderMain";
 
 function Feed() {
@@ -42,6 +42,10 @@ function Feed() {
 
       <main>
         <div className="cards">
+          <SearchBar
+            placeholder="Insira o Autor que deseja pesquisar"
+            data={posts}
+          />
           {posts.map((post, key) => {
             return (
               <div className="card" key={key}>

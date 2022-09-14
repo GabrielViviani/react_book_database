@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
-export default function ListaLivros() {
+export default function ListaLivros({ livros }) {
   const [livros, setLivros] = useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:8080/books").then((res) => {
+    axios.get("http://localhost:8080/ListBooks").then((res) => {
       const dadosLivros = res.data;
       setLivros(dadosLivros);
     });
